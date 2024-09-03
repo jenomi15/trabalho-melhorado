@@ -130,7 +130,7 @@ public class Tabuleiro {
                  System.out.println(jogadores.get(a));
                 verificacaoCasa(jogadores.get(a).getNumeroCasa(), jogadores.get(a));
                 imprimirTabuleiro();
-                jogadores.get(a).setNumeroDeJogadas(  jogadores.get(a).getNumeroDeJogadas() +1  );
+                jogadores.get(a).setNumeroCasa(  jogadores.get(a).getNumeroCasa() +1  );
                 System.out.println(" \n Deseja continuar ? \n 1 - sim \n 2 - não ");
                 Scanner teclado3 = new Scanner(System.in);
                 int p = teclado3.nextInt();
@@ -159,7 +159,7 @@ public class Tabuleiro {
         System.out.println("Posições dos jogadores:");
         for (int i = 0; i < jogadores.size(); i++) {
             Jogador jogador = jogadores.get(i);
-            System.out.println((i + 1) + "º lugar: Jogador " + jogador.getCor() + " - Casa " + jogador.getNumeroCasa() + " - numero de jogadas : "+ jogador.getNumeroDeJogadas());
+            System.out.println((i + 1) + "º lugar: Jogador " + jogador.getCor() + " - Casa " + jogador.getNumeroCasa() + " - numero de jogadas : "+ jogador.getNumeroCasa());
         }
     }
     
@@ -176,13 +176,13 @@ public class Tabuleiro {
         // Cria o novo jogador  no tipo selecionado pelo mano
         switch (tipoJogador) {
             case 1:
-                novoJogador = new JogadorAzarado(jogador.getCor(), numeroCasaAtual, jogador.pulaRodada() , jogador.getNumeroDeJogadas());
+                novoJogador = new JogadorAzarado(jogador.getCor(), numeroCasaAtual, jogador.pulaRodada() , jogador.getNumeroCasa());
                 break;
             case 2:
-                novoJogador = new JogadorNormal(jogador.getCor(), numeroCasaAtual, jogador.pulaRodada() , jogador.getNumeroDeJogadas());
+                novoJogador = new JogadorNormal(jogador.getCor(), numeroCasaAtual, jogador.pulaRodada() , jogador.getNumeroCasa());
                 break;
             case 3:
-                novoJogador = new JogadorSortudo(jogador.getCor(), numeroCasaAtual, jogador.pulaRodada() , jogador.getNumeroDeJogadas());
+                novoJogador = new JogadorSortudo(jogador.getCor(), numeroCasaAtual, jogador.pulaRodada() , jogador.getNumeroCasa());
                 break;
             default:
                 System.out.println("Tipo de jogador inválido");
@@ -315,6 +315,10 @@ private Jogador escolherAleatoriamente(List<Jogador> jogadores) {
         return false;
 
 
+
+    }
+}
+// fim
 
     }
 }
