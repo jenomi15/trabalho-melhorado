@@ -8,6 +8,62 @@ public   class Jogador  implements Comparable<Jogador> {
     private boolean iguais;
     protected int numeroDeJogadas;
     protected int pontuacaoEmModedas;
+    private boolean boné;
+    private boolean moleton;
+    private boolean óculosEscuros;
+
+    
+    public void setBoné(boolean boné) {
+        this.boné = boné;
+    }
+
+    public boolean temBoné() {
+        return boné;
+    }
+
+    public void setMoleton(boolean moleton) {
+        this.moleton = moleton;
+    }
+
+    public boolean temMoleton() {
+        return moleton;
+    }
+
+    public void setOculosEscuros(boolean oculosEscuros) {
+        this.óculosEscuros = oculosEscuros;
+    }
+
+    public boolean temOculosEscuros() {
+        return óculosEscuros;
+    }
+
+    public void removerMoeda(int quantidade) {
+        this.pontuacaoEmMoedas -= quantidade;
+    }
+
+    public void adicionarMoeda(int quantidade) {
+        this.pontuacaoEmMoedas += quantidade;
+    }
+
+    public int getPontuacaoEmMoedas() {
+        return pontuacaoEmMoedas;
+    }
+    
+    // Método para atualizar a pontuação com base no item equipado
+    public int calcularMoedasCasaSimples() {
+        int moedas = 1; // Base para Casa Simples
+        if (temOculosEscuros()) {
+            moedas += 3;
+        } else if (temMoleton()) {
+            moedas += 2;
+        } else if (temBoné()) {
+            moedas += 1;
+        }
+        return moedas;
+    }
+
+    
+    
     public int getNumeroDeJogadas() {
         return numeroDeJogadas;
     }
