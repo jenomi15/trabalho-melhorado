@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Casa {
+public abstract class Casa {
     private String cor;
     private int numero;
     private List<String> cores;
@@ -46,7 +46,7 @@ public class Casa {
     public boolean temCor() {
         return cor != null && !cor.isEmpty();
     }
-
+    public void aplicarRegra();
 
   
    // @Override
