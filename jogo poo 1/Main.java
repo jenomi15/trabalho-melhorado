@@ -29,7 +29,7 @@ public class Main {
         }
 
         Tabuleiro tabuleiro = new Tabuleiro(jogadores);
-        tabuleiro.criacaoDoTabuleiro(40);
+        tabuleiro.criacaoDoTabuleiro(quantidade);
 
         for (int l = 0; l < j; l++) {
             tabuleiro.adicionarCorCasa(0, jogadores.get(l).getCor());
