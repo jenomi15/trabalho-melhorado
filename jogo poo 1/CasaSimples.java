@@ -5,7 +5,8 @@ public class CasaSimples extends Casa {
 
     @Override
     public void aplicarRegra(Jogador jogador) {
-        jogador.pontuacaoEmModedas += 1;
-        System.out.println("Casa Simples: 1 moeda adicionada ao jogador " + jogador.getNome() + ". Pontuação atual: " + jogador.pontuacaoEmModedas);
+        int moedas = jogador.calcularMoedasCasaSimples();
+        jogador.adicionarMoeda(moedas);
+        System.out.println("Casa Simples: " + moedas + " moedas adicionadas ao jogador " + jogador.getNome() + ". Pontuação atual: " + jogador.getPontuacaoEmMoedas());
     }
 }
