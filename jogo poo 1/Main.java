@@ -27,7 +27,9 @@ public class Main {
             Jogador jogador = jogadores.get(i);
             System.out.println("Jogador " + (i + 1) + " - Cor: " + jogador.getCor());
         }
-
+         System.out.println("Digite a quantidade de casas no tabuleiro: ");
+        int quantidade = teclado.nextInt(); 
+        
         Tabuleiro tabuleiro = new Tabuleiro(jogadores);
         tabuleiro.criacaoDoTabuleiro(quantidade);
 
